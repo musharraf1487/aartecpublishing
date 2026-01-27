@@ -1,0 +1,71 @@
+
+import React from 'react';
+
+const SocialProof: React.FC = () => {
+  return (
+    <section id="proof" className="py-24 px-6 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold text-aartec-charcoal serif mb-4">Trusted by Global Leaders.</h2>
+          <p className="text-slate-500 italic font-medium">Deploying authority for the world's most influential decision makers.</p>
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center gap-16 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all mb-24">
+          <div className="text-xl font-black text-slate-800 tracking-tighter uppercase">Government of Dubai</div>
+          <div className="text-xl font-black text-slate-800 tracking-tighter uppercase">Government of Pakistan</div>
+          <div className="text-3xl font-bold italic text-slate-800">accenture</div>
+          <div className="text-2xl font-black text-slate-800 flex items-center">
+            <div className="w-8 h-8 bg-slate-800 mr-2 rounded"></div> DELOITTE
+          </div>
+        </div>
+
+        {/* High-Contrast Testimonial */}
+        <div className="relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-aartec-teal/5 -rotate-1 pointer-events-none rounded-[100px]"></div>
+          
+          <div className="bg-aartec-teal rounded-[40px] p-2 lg:p-1 shadow-3xl relative z-10 overflow-hidden">
+            <div className="bg-white rounded-[38px] p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-2/5">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-aartec-amber/20 rounded-3xl blur-2xl"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                    alt="Legacy Partner" 
+                    className="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] border-4 border-white"
+                  />
+                  <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-2xl border border-slate-100 z-20">
+                    <div className="text-4xl font-black text-aartec-teal">$400K+</div>
+                    <div className="text-[10px] font-bold text-aartec-amber uppercase tracking-widest mt-1">Generated Revenue</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:w-3/5">
+                <div className="text-aartec-amber mb-6 flex space-x-1">
+                  {[1,2,3,4,5].map(s => <i key={s} className="fas fa-star text-sm"></i>)}
+                </div>
+                <h3 className="text-4xl font-bold text-aartec-charcoal mb-8 serif leading-tight">
+                  "AARTEC turned one book into a $400k revenue engine in 9 months."
+                </h3>
+                <p className="text-slate-600 italic text-xl mb-10 leading-relaxed font-light">
+                  "I was skeptical that a book could do more than act as a fancy business card. 
+                  They built the team that handled the lead gen *from* the book, 
+                  converting readers into high-ticket clients almost automatically."
+                </p>
+                <div className="flex items-center space-x-6">
+                  <div className="w-16 h-0.5 bg-aartec-amber"></div>
+                  <div>
+                    <div className="font-black text-aartec-charcoal uppercase tracking-tighter">Dr. Sarah Jenkins</div>
+                    <div className="text-aartec-teal text-xs font-bold uppercase tracking-widest mt-1">Global Strategy Advisor</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SocialProof;
