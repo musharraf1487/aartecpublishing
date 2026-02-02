@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ onBookingClick }) => {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="text-left">
           <div className="inline-block px-4 py-1.5 rounded-full bg-aartec-teal/10 text-aartec-teal text-xs font-bold tracking-widest uppercase mb-8">
-            Elite Legacy Architecture
+            Imagination Meets Execution
           </div>
           <h1 className="text-5xl lg:text-7xl font-bold text-aartec-charcoal leading-tight mb-8">
             Turn Your Experience <br />
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ onBookingClick }) => {
           <div className="mt-10 flex items-center space-x-4 text-slate-500 text-sm font-medium">
             <span className="flex items-center">
               <i className="fas fa-check-circle text-aartec-amber mr-2"></i> 
-              Only 5 slots remaining for {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())}
+              Book your slots for {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())}
             </span>
           </div>
         </div>
