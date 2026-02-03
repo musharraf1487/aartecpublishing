@@ -6,25 +6,26 @@ interface PackagesProps {
 
 const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
   const steps = [
-    {
-      step: "Pricing",
-      title: "95 USD",
-      subtitle: " Strategy Call",
-      icon: "📖",
-      copy: "A call to discuss your digital strategy",
-    },
+    // {
+    //   step: "Pricing",
+    //   title: "95 USD",
+    //   subtitle: " Strategy Call",
+    //   icon: "📖",
+    //   copy:
+    //     "A call to discuss your digital strategy\n" +
+    //     "Our imagineers will guide you in executing your idea (with or without us)\n" +
+    //     "Create a clear execution roadmap before writing begins\n" +
+    //     "Typical response within 7 days",
+    // },
     {
       step: "Pricing",
       title: "7,995 USD",
       subtitle: " Book Publishing ",
       icon: "📖",
       copy:
-        "Professional ghostwriting aligned with the author’s voice. " +
-        "\n" +
-        "Chapter structure, narrative flow, and message refinement " +
-        "\n" +
-        " Editing, proofreading, final manuscript preparation and book cover design." +
-        "\n" +
+        "Professional ghostwriting aligned with the author's voice\n" +
+        "Chapter structure, narrative flow, and message refinement\n" +
+        "Editing, proofreading, final manuscript preparation and book cover design\n" +
         "Publishing setup for Amazon and global distribution",
     },
     {
@@ -32,20 +33,28 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
       title: "7,995 USD",
       subtitle: "Book marketing.",
       icon: "👥",
-      copy: "Launch and post-launch marketing strategy (30–90 days).",
+      copy:
+        "Launch and post-launch marketing strategy (30–90 days)\n" +
+        "Audience growth and author brand positioning\n" +
+        "Content creation from the book for digital platforms\n" +
+        "Sales-focused execution across online channels",
     },
     {
       step: "Pricing",
       title: "95,000 USD",
       subtitle: "PR Blitz",
       icon: "📈",
-      copy: "Targeted outreach to podcasts, media, and publications",
+      copy:
+        "Targeted outreach to podcasts, media, and publications\n" +
+        "Strong PR angles tied to timely narratives\n" +
+        "Interview preparation and media talking points\n" +
+        "High-impact visibility to establish authority fast",
     },
   ];
 
   return (
     <section id="solution" className="py-24 px-6 bg-[#f0f4f4]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-9xl mx-auto">
         <div className="text-center mb-20">
           <span className="text-aartec-teal font-bold uppercase tracking-widest text-xs mb-4 block">
             The AARTEC Framework
@@ -55,7 +64,7 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {steps.map((item, idx) => (
             <div
               key={idx}
@@ -67,18 +76,21 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
               <div className="text-aartec-amber font-bold text-[10px] uppercase tracking-widest mb-3">
                 {item.step}
               </div>
-              <h3 className="text-2xl font-bold text-aartec-charcoal mb-2 serif">
-                {item.title}
-              </h3>
+              <h3 className="fw-bold display-6 mb-0">{item.title}</h3>
               <div className="text-aartec-teal text-xs font-semibold mb-6 tracking-wide italic">
                 {item.subtitle}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-8 text-sm">
+              <p className="text-slate-600 leading-relaxed mb-8 text-sm whitespace-pre-line">
                 {item.copy}
               </p>
-              <div className="pt-6 border-t border-slate-50 flex items-center text-aartec-teal text-xs font-bold group-hover:translate-x-2 transition-transform cursor-pointer">
-                Buy Now <i className="fas fa-bolt ml-3 text-aartec-amber"></i>
-              </div>
+              <a
+                href="https://calendly.com/ahmed-aartec/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pt-6 border-t border-slate-50 flex items-center text-aartec-teal text-xs font-bold group-hover:translate-x-2 transition-transform cursor-pointer"
+              >
+                Book Now <i className="fas fa-bolt ml-3 text-aartec-amber"></i>
+              </a>
             </div>
           ))}
         </div>
