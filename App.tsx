@@ -7,6 +7,7 @@ import Packages from "./components/Packages";
 import SocialProof from "./components/SocialProof";
 import Qualification from "./components/Qualification";
 import Affiliate from "./components/Affiliate";
+import ComingSoon from "./components/ComingSoon";
 import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
 import BookingModal from "./components/BookingModal";
@@ -44,6 +45,7 @@ const App: React.FC = () => {
         */}
         <SocialProof />
         <Qualification />
+        <ComingSoon />
         {/* <Affiliate onApplyClick={() => setIsAffiliateOpen(true)} /> */}
         <Footer />
       </main>

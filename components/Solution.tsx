@@ -18,14 +18,14 @@ const Solution: React.FC<SolutionProps> = ({ onBookingClick }) => {
       title: "The Growth Engine",
       subtitle: "(Elite Team Deployment)",
       icon: "👥",
-      copy: "We Build Your Team. Access our elite network to hire ambitious talent who can implement the strategies in your book and take the operational load off your shoulders.",
+      copy: "We Build Your Team! Access our elite network to hire ambitious talent who can implement various strategies and take the operational load off your shoulders.",
     },
     {
       step: "",
       title: "The Scale Strategy",
       subtitle: "(Business Creation)",
       icon: "📈",
-      copy: 'We Scale Your Vision. Use our "Masters of Business Creation" framework to turn your book\'s readers into high-paying clients and a permanent legacy.',
+      copy: "We Scale Your Vision, using our very own case studies to turn your venture into a modern legacy.",
     },
   ];
 

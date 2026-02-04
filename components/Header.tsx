@@ -16,16 +16,25 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick }) => {
             href="#solution"
             className="hover:text-aartec-teal transition-colors"
           >
-            Publishing Ecosystem
+            AARTEC Ecosystem
           </a>
-          <a href="#proof" className="hover:text-aartec-teal transition-colors">
+          <a
+            href="#Packages"
+            className="hover:text-aartec-teal transition-colors"
+          >
+            Packages
+          </a>
+          <a
+            href="#affiliate"
+            className="hover:text-aartec-teal transition-colors text-slate-400"
+          >
             Books
           </a>
           <a
             href="#affiliate"
             className="hover:text-aartec-teal transition-colors text-slate-400"
           >
-            Packages
+            About
           </a>
         </nav>
 

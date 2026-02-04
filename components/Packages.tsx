@@ -54,11 +54,11 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
 
   return (
     <section id="solution" className="py-24 px-6 bg-[#f0f4f4]">
-      <div className="max-w-9xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <span className="text-aartec-teal font-bold uppercase tracking-widest text-xs mb-4 block">
+          {/* <span className="text-aartec-teal font-bold uppercase tracking-widest text-xs mb-4 block">
             The AARTEC Framework
-          </span>
+          </span> */}
           <h2 className="text-4xl lg:text-5xl font-bold text-aartec-charcoal serif">
             Choose Your Plan
           </h2>
@@ -76,13 +76,20 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
               <div className="text-aartec-amber font-bold text-[10px] uppercase tracking-widest mb-3">
                 {item.step}
               </div>
-              <h3 className="fw-bold display-6 mb-0">{item.title}</h3>
+              <h3 className="fw-bold display-6 mb-0 serif text-2xl font-bold text-aartec-charcoal">
+                {item.title}
+              </h3>
               <div className="text-aartec-teal text-xs font-semibold mb-6 tracking-wide italic">
                 {item.subtitle}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-8 text-sm whitespace-pre-line">
-                {item.copy}
-              </p>
+              <ul className="text-slate-600 leading-relaxed mb-8 text-sm space-y-2">
+                {item.copy.split("\n").map((line, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-aartec-teal font-bold mr-3">•</span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
               <a
                 href="https://calendly.com/ahmed-aartec/30min"
                 target="_blank"
