@@ -10,13 +10,13 @@ const SocialProof: React.FC = () => {
 
           <div className="bg-aartec-teal rounded-[40px] p-2 lg:p-1 shadow-3xl relative z-10 overflow-hidden">
             <div className="bg-white rounded-[38px] p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-2/5">
+              <div className="lg:w-1/3">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-aartec-amber/20 rounded-3xl blur-2xl"></div>
                   <img
                     src="images/Wealthology.jpeg"
                     alt="Wealthology Book Cover"
-                    className="rounded-3xl shadow-2xl relative z-10 w-full object-cover aspect-[4/5] border-4 border-black"
+                    className="rounded-3xl shadow-2xl relative z-10 w-full object-contain aspect-[4/5] border-4 border-black"
                   />
                   <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-2xl border border-slate-100 z-20">
                     <div className="text-4xl font-black text-aartec-teal">
@@ -29,7 +29,7 @@ const SocialProof: React.FC = () => {
                 </div>
               </div>
 
-              <div className="lg:w-3/5">
+              <div className="lg:w-2/3">
                 <div className="text-aartec-amber mb-6 flex space-x-1">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <i key={s} className="fas fa-star text-sm"></i>

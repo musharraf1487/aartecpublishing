@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
 import BookingModal from "./components/BookingModal";
 import AffiliateModal from "./components/AffiliateModal";
+import Testimonials from "./components/Testimonials";
 // import LegacyAdvisor from "./components/LegacyAdvisor";
 
 const App: React.FC = () => {
@@ -40,11 +41,13 @@ const App: React.FC = () => {
         <Problem />
         <Solution onBookingClick={() => setIsBookingOpen(true)} />
         <Packages onBookingClick={() => setIsBookingOpen(true)} />
+
         {/*
         <LegacyAdvisor onBookingClick={() => setIsBookingOpen(true)} />
         */}
         <SocialProof />
-        <Qualification />
+        {/* <Qualification /> */}
+        <Testimonials />
         <ComingSoon />
         {/* <Affiliate onApplyClick={() => setIsAffiliateOpen(true)} /> */}
         <Footer />
