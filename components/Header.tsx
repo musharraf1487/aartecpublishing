@@ -19,14 +19,14 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick }) => {
             AARTEC Ecosystem
           </a>
           <a
-            href="#Packages"
+            href="#packages"
             className="hover:text-aartec-teal transition-colors"
           >
             Packages
           </a>
           <a
-            href="#affiliate"
-            className="hover:text-aartec-teal transition-colors text-slate-400"
+            href="#testimonials"
+            className="hover:text-aartec-teal transition-colors"
           >
             Books
           </a>

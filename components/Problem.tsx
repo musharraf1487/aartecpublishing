@@ -21,7 +21,7 @@ const Problem: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-10">
           {[
             {
-              icon: "",
+              icon: "fas fa-brain",
               title: "Knowledge Trapped",
               desc: "Expertise is siloed in your mind, making you the ultimate bottleneck.",
             },

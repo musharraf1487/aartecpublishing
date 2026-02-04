@@ -40,12 +40,12 @@ const App: React.FC = () => {
         <Hero onBookingClick={() => setIsBookingOpen(true)} />
         <Problem />
         <Solution onBookingClick={() => setIsBookingOpen(true)} />
-        <Packages onBookingClick={() => setIsBookingOpen(true)} />
 
         {/*
         <LegacyAdvisor onBookingClick={() => setIsBookingOpen(true)} />
         */}
         <SocialProof />
+        <Packages onBookingClick={() => setIsBookingOpen(true)} />
         {/* <Qualification /> */}
         <Testimonials />
         <ComingSoon />

@@ -56,7 +56,7 @@ const testimonials: TestimonialData[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="space-y-24 md:space-y-40 py-16">
+    <div id="testimonials" className="space-y-24 md:space-y-40 py-16">
       {/* Page Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         <h2 className="text-5xl md:text-6xl font-extrabold text-teal-700 tracking-tight">

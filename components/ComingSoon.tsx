@@ -2,10 +2,10 @@ import React from "react";
 
 const ComingSoon: React.FC = () => {
   return (
-    <section className="relative py-16 px-6 bg-gradient-to-r from-blue-50 to-purple-50 overflow-hidden">
+    <section className="relative py-16 px-6 bg-gradient-to-r from-[#1e747b]/5 to-[#d97e1a]/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Main Container */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl overflow-hidden shadow-xl p-12 lg:p-16">
+        <div className="relative bg-gradient-to-r from-[#1e747b] to-[#d97e1a] rounded-2xl overflow-hidden shadow-xl p-12 lg:p-16">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>

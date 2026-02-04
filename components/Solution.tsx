@@ -30,7 +30,7 @@ const Solution: React.FC<SolutionProps> = ({ onBookingClick }) => {
   ];
 
   return (
-    <section id="solution" className="py-24 px-6 bg-[#f0f4f4]">
+    <section id="solution" className="pt-32 pb-12 px-6 bg-[#f0f4f4]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <span className="text-aartec-teal font-bold uppercase tracking-widest text-xs mb-4 block">

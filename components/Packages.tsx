@@ -53,7 +53,7 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
   ];
 
   return (
-    <section id="solution" className="py-24 px-6 bg-[#f0f4f4]">
+    <div id="packages" className="py-12 px-6 bg-[#f0f4f4]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           {/* <span className="text-aartec-teal font-bold uppercase tracking-widest text-xs mb-4 block">
@@ -94,9 +94,9 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
                 href="https://calendly.com/ahmed-aartec/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pt-6 border-t border-slate-50 flex items-center text-aartec-teal text-xs font-bold group-hover:translate-x-2 transition-transform cursor-pointer"
+                className="mt-6 w-full py-4 bg-aartec-teal text-white rounded-full font-bold shadow-lg hover:bg-aartec-teal/90 flex justify-center items-center transition-all hover:-translate-y-1"
               >
-                Book Now <i className="fas fa-bolt ml-3 text-aartec-amber"></i>
+                Book Now <i className="fas fa-bolt ml-2 text-white/90"></i>
               </a>
             </div>
           ))}
@@ -105,14 +105,14 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
         <div className="mt-24 text-center">
           <button
             onClick={onBookingClick}
-            className="bg-aartec-charcoal text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-aartec-teal transition-all transform hover:scale-105 shadow-2xl flex items-center mx-auto"
+            className="bg-aartec-teal text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-aartec-teal/90 transition-all transform hover:scale-105 shadow-2xl flex items-center mx-auto"
           >
             Start Your Transformation{" "}
             <i className="fas fa-bolt ml-3 text-aartec-amber"></i>
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
