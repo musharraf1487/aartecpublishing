@@ -15,7 +15,13 @@ const Footer: React.FC = () => {
         </p>
 
         <div className="inline-flex flex-col items-center">
-          <button className="bg-aartec-teal text-white px-14 py-6 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-aartec-teal/20 mb-6 uppercase tracking-widest">
+          <button
+            onClick={() =>
+              (window.location.href =
+                "https://calendly.com/ahmed-aartec/30min?month=2026-02")
+            }
+            className="bg-aartec-teal text-white px-14 py-6 rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-aartec-teal/20 mb-6 uppercase tracking-widest"
+          >
             Book Strategy Call
           </button>
           <div className="flex items-center text-slate-400 text-xs font-bold uppercase tracking-widest space-x-6">

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Brain, Hourglass, UserX } from "lucide-react";
 const Problem: React.FC = () => {
   return (
     <section className="py-24 px-6 bg-white">
@@ -21,17 +21,17 @@ const Problem: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-10">
           {[
             {
-              icon: "fas fa-brain",
+              icon: Brain,
               title: "Knowledge Trapped",
               desc: "Expertise is siloed in your mind, making you the ultimate bottleneck.",
             },
             {
-              icon: "fas fa-hourglass-half",
+              icon: Hourglass,
               title: "Zero Bandwidth",
               desc: "Operation fatigue prevents you from building personal authority.",
             },
             {
-              icon: "fas fa-users-slash",
+              icon: UserX,
               title: "Talent Gaps",
               desc: "Scaling requires specialized execution talent you don't have time to vet.",
             },
@@ -41,7 +41,7 @@ const Problem: React.FC = () => {
               className="bg-slate-50 p-10 rounded-2xl border border-slate-100 hover:border-aartec-teal/30 transition-all group"
             >
               <div className="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                <i className={`${item.icon} text-aartec-teal text-2xl`}></i>
+                <item.icon className="text-aartec-teal text-2xl" />
               </div>
               <h3 className="text-lg font-bold text-aartec-charcoal mb-3 serif">
                 {item.title}

@@ -60,10 +60,10 @@ const App: React.FC = () => {
       />
 
       {/* Modals */}
-      <BookingModal
+      {/* <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
-      />
+      /> */}
       {/* <AffiliateModal
         isOpen={isAffiliateOpen}
         onClose={() => setIsAffiliateOpen(false)}

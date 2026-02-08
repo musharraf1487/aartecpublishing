@@ -8,6 +8,9 @@ interface TestimonialData {
   description: string;
   compositeImage: string;
   authorName: string;
+  siteUrl?: string;
+  videoUrl?: string;
+  amazonUrl?: string;
 }
 
 const testimonials: TestimonialData[] = [
@@ -21,6 +24,10 @@ const testimonials: TestimonialData[] = [
       "Trish Odusami is a coach that helps leaders. A book gives her the credibility to spread her message further and become a thought leader in her industry.",
     compositeImage: "/images/risingleaders.png",
     authorName: "Trish Odusami",
+    siteUrl: "https://www.trishodusami.com/",
+    videoUrl: "https://www.youtube.com/watch?v=6Q4sdDtVr8s",
+    amazonUrl:
+      "https://www.amazon.com/Rising-Leaders-Powerful-Habits-Success/dp/B0CPJNJP94",
   },
   {
     id: 2,
@@ -31,6 +38,10 @@ const testimonials: TestimonialData[] = [
       "Eula Clarke is a former UK banking professional with over 47 years of experience, now dedicated to empowering women through coaching and consultancy. Her debut book A Call to Elevate inspires readers to turn ambition into action and create meaningful change.",
     compositeImage: "/images/A call to elevate.png",
     authorName: "Eula Clarke",
+    siteUrl: "https://eulaclarke.com/",
+    videoUrl: "#",
+    amazonUrl:
+      "https://www.amazon.com/Call-Elevate-Transform-Ambition-Action/dp/B0CPJNF697",
   },
   {
     id: 3,
@@ -41,6 +52,10 @@ const testimonials: TestimonialData[] = [
       "Trish Odusami is a passionate leadership advocate dedicated to developing future leaders. Her book Rising Talents and the Key to Leadership empowers readers with the mindset and skills needed to lead with confidence and impact.",
     compositeImage: "/images/the key to leadership.png",
     authorName: "Trish Odusami",
+    siteUrl: "https://www.trishodusami.com/",
+    videoUrl: "https://www.youtube.com/watch?v=6Q4sdDtVr8s",
+    amazonUrl:
+      "https://www.amazon.com/Key-Leadership-Trish-Odusami/dp/B0CQH2Y2HX/ref=sr_1_1?crid=28L2XYBLX9WN4&dib=eyJ2IjoiMSJ9.v9NJHI97Q1H6nWGyyry6tdOWmk4SckwCG7l8GVVxDuE.bV26wadpkd1hN-PGKCH99Sm9si5D95_V02cUo1mBLnc&dib_tag=se&keywords=key+to+leadership+by+trish&qid=1770544907&s=books&sprefix=key+to+leadership+by+tris%2Cstripbooks-intl-ship%2C339&sr=1-1",
   },
   {
     id: 4,
@@ -51,6 +66,10 @@ const testimonials: TestimonialData[] = [
       "Dr. Eraldo Fezaj is a dental professional with over 15 years of clinical experience, passionate about the connection between smiling, confidence, and well-being. His book How a Smile Can Build Your Self-Esteem blends science, psychology, and practical guidance to help readers improve their smile—and their self-confidence.",
     compositeImage: "/images/smile.png",
     authorName: "Dr. Eraldo Fezaj",
+    siteUrl:
+      "https://www.linkedin.com/in/dr-eraldo-fezaj-59ab98103?originalSubdomain=al",
+    videoUrl: "#",
+    amazonUrl: "https://www.amazon.com/dp/B0CC4JC757",
   },
 ];
 
@@ -95,20 +114,41 @@ const Testimonials: React.FC = () => {
 
               {/* Smaller Vertical Teal Button Stack */}
               <div className="flex flex-col gap-3 max-w-[260px] pt-2">
-                <button className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]">
-                  <i className="fas fa-globe"></i>
-                  <span>Visit the Website</span>
-                </button>
+                {item.siteUrl && (
+                  <a
+                    href={item.siteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+                  >
+                    <i className="fas fa-globe"></i>
+                    <span>Visit the Website</span>
+                  </a>
+                )}
 
-                <button className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]">
-                  <i className="fas fa-play"></i>
-                  <span>Watch the Video</span>
-                </button>
+                {item.videoUrl && (
+                  <a
+                    href={item.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+                  >
+                    <i className="fas fa-play"></i>
+                    <span>Watch the Video</span>
+                  </a>
+                )}
 
-                <button className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]">
-                  <i className="fas fa-shopping-cart"></i>
-                  <span>Buy now at Amazon</span>
-                </button>
+                {item.amazonUrl && (
+                  <a
+                    href={item.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
+                  >
+                    <i className="fas fa-shopping-cart"></i>
+                    <span>Buy now at Amazon</span>
+                  </a>
+                )}
               </div>
             </div>
 
