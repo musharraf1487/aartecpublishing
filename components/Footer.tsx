@@ -1,11 +1,14 @@
 import React from "react";
-import Logo from "./Logo";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white border-t border-slate-100 pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto text-center mb-20">
-        <Logo className="w-16 h-16 mx-auto mb-10" />
+        <img
+          src="/images/logo.png"
+          alt="Logo"
+          className="w-48 h-48 mx-auto mb-10"
+        />
         <h2 className="text-5xl font-bold mb-6 serif text-aartec-charcoal">
           Your Legacy is Waiting.
         </h2>
