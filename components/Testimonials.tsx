@@ -126,18 +126,6 @@ const Testimonials: React.FC = () => {
                   </a>
                 )}
 
-                {item.videoUrl && (
-                  <a
-                    href={item.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 bg-teal-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-all shadow-sm hover:shadow-md active:scale-[0.98]"
-                  >
-                    <i className="fas fa-play"></i>
-                    <span>Watch the Video</span>
-                  </a>
-                )}
-
                 {item.amazonUrl && (
                   <a
                     href={item.amazonUrl}

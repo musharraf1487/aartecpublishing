@@ -1,5 +1,7 @@
 {
   "name": "Aartec Publishing",
+  "homepage": "https://aartecpublishing.com",
+
   "description": "A high-converting one-page platform for entrepreneurs and executives to ghostwrite bestsellers, deploy elite teams, and build a lasting legacy.",
   "requestFramePermissions": [
     "camera",
