@@ -1,4 +1,5 @@
 import React from "react";
+import { trackEvent } from "../lib/pixel";
 
 interface HeroProps {
   onBookingClick: () => void;
@@ -32,7 +33,14 @@ const Hero: React.FC<HeroProps> = ({ onBookingClick }) => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5">
-            <a href="https://calendly.com/ahmed-aartec/30min" target="_blank">
+            <a
+              href="https://calendly.com/ahmed-aartec/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("Schedule", { content_name: "Hero Strategy Call" })
+              }
+            >
               {" "}
               <button
                 onClick={onBookingClick}

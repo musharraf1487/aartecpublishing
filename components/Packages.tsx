@@ -1,3 +1,4 @@
+import { trackEvent } from "../lib/pixel";
 import React from "react";
 
 interface PackagesProps {
@@ -18,9 +19,9 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
     //     "Typical response within 7 days",
     // },
     {
-      step: "Pricing",
-      title: "7,995 USD",
-      subtitle: " Book Publishing ",
+      // step: "Pricing",
+      // title: "7,995 USD",
+      title: " Book Publishing ",
       icon: "📖",
       copy:
         "Professional ghostwriting aligned with the author's voice\n" +
@@ -29,9 +30,9 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
         "Publishing setup for Amazon and global distribution",
     },
     {
-      step: "Pricing",
-      title: "7,995 USD",
-      subtitle: "Book marketing.",
+      // step: "Pricing",
+      // title: "7,995 USD",
+      title: "Book marketing.",
       icon: "👥",
       copy:
         "Launch and post-launch marketing strategy (30–90 days)\n" +
@@ -40,9 +41,9 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
         "Sales-focused execution across online channels",
     },
     {
-      step: "Pricing",
-      title: "95,000 USD",
-      subtitle: "PR Blitz",
+      // step: "Pricing",
+      // title: "95,000 USD",
+      title: "PR Blitz",
       icon: "📈",
       copy:
         "Targeted outreach to podcasts, media, and publications\n" +
@@ -94,6 +95,9 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
                 href="https://calendly.com/ahmed-aartec/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("Schedule", { content_name: item.title.trim() })
+                }
                 className="mt-6 w-full py-4 bg-aartec-teal text-white rounded-full font-bold shadow-lg hover:bg-aartec-teal/90 flex justify-center items-center transition-all hover:-translate-y-1"
               >
                 Book Now <i className="fas fa-bolt ml-2 text-white/90"></i>
@@ -104,7 +108,10 @@ const Packages: React.FC<PackagesProps> = ({ onBookingClick }) => {
 
         <div className="mt-24 text-center">
           <button
-            onClick={onBookingClick}
+            onClick={() => {
+              trackEvent("Lead", { content_name: "Start Your Transformation" });
+              onBookingClick();
+            }}
             className="bg-aartec-teal text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-aartec-teal/90 transition-all transform hover:scale-105 shadow-2xl flex items-center mx-auto"
           >
             Start Your Transformation{" "}

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { trackEvent } from '../lib/pixel';
 
 interface StickyCTAProps {
   visible: boolean;
@@ -15,7 +16,10 @@ const StickyCTA: React.FC<StickyCTAProps> = ({ visible, onBookingClick }) => {
           <span className="text-aartec-amber text-[10px] font-bold italic">Slots opening for {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date(new Date().setMonth(new Date().getMonth() + 1)))}</span>
         </div>
         <button 
-          onClick={onBookingClick}
+          onClick={() => {
+            trackEvent('Lead', { content_name: 'Sticky Book Call' });
+            onBookingClick();
+          }}
           className="bg-aartec-teal text-white px-8 py-2.5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-white hover:text-aartec-teal transition-all whitespace-nowrap shadow-lg"
         >
           Book Call
