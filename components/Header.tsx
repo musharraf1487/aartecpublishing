@@ -1,3 +1,4 @@
+import { trackEvent } from "../lib/pixel";
 import React from "react";
 import Logo from "./Logo";
 
@@ -39,10 +40,11 @@ const Header: React.FC<HeaderProps> = ({ onBookingClick }) => {
         </nav>
 
         <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.whatsapp.com/send?phone=14156340290")
-          }
+          onClick={() => {
+            trackEvent("Contact", { content_name: "WhatsApp Header" });
+            window.location.href =
+              "https://api.whatsapp.com/send?phone=14156340290";
+          }}
           className="bg-aartec-teal text-white px-6 py-2.5 rounded font-bold text-sm hover:bg-aartec-teal/90 hover:shadow-lg transition-all duration-300"
         >
           WhatsApp Us

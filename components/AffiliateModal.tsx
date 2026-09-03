@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { trackEvent } from '../lib/pixel';
 
 interface AffiliateModalProps {
   isOpen: boolean;
@@ -24,7 +25,13 @@ const AffiliateModal: React.FC<AffiliateModalProps> = ({ isOpen, onClose }) => {
           <p className="text-slate-500 mt-2">Partner with the most elite legacy architecture firm.</p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            trackEvent('Lead', { content_name: 'Affiliate Application' });
+          }}
+        >
           <div>
             <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Full Name</label>
             <input type="text" placeholder="John Smith" className="w-full p-3 bg-slate-50 border border-slate-200 rounded focus:ring-2 focus:ring-gold-500 outline-none" />

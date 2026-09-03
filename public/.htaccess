@@ -1,0 +1,80 @@
+# Apache config for Aartec Publishing (Vite single-page React app)
+# Lives in public/ so Vite copies it into dist/ on every build.
+# Upload the contents of dist/ to your web root (e.g. public_html/).
+
+# ---------- Force HTTPS and www-less canonical URL ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect http -> https
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirect www -> non-www (remove this block if you prefer www)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # ---------- SPA fallback ----------
+  # Serve real files and folders as-is; send everything else to index.html
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# ---------- Never list directories ----------
+Options -Indexes
+
+# ---------- Block access to source and config files if they get uploaded ----------
+<FilesMatch "\.(tsx?|json|lock|md|env|log|config\.js)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(package\.json|package-lock\.json|tsconfig\.json|vite\.config\.ts|metadata\.json)$">
+  Require all denied
+</FilesMatch>
+
+# ---------- Compression ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
+</IfModule>
+
+# ---------- Caching ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # index.html must always be fresh so new builds are picked up
+  ExpiresByType text/html "access plus 0 seconds"
+  # Vite fingerprints assets (index-XXXX.js), so they can be cached for a year
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # ---------- Security headers ----------
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Meta Pixel, Calendly, and the CDNs the site uses are allowed to load
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ---------- Correct MIME types ----------
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>

@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
 import BookingModal from "./components/BookingModal";
 import AffiliateModal from "./components/AffiliateModal";
+import Giftbeyond from "./components/Giftbeyond";
 import Testimonials from "./components/Testimonials";
 // import LegacyAdvisor from "./components/LegacyAdvisor";
 
@@ -49,15 +50,16 @@ const App: React.FC = () => {
         {/* <Qualification /> */}
         <Testimonials />
         <ComingSoon />
+        <Giftbeyond />
         {/* <Affiliate onApplyClick={() => setIsAffiliateOpen(true)} /> */}
         <Footer />
       </main>
 
       {/* Persistent UI Elements */}
-      <StickyCTA
+      {/* <StickyCTA
         visible={showSticky}
         onBookingClick={() => setIsBookingOpen(true)}
-      />
+      /> */}
 
       {/* Modals */}
       {/* <BookingModal
